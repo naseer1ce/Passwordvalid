@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demopass
+spec:
+  selector:
+    matchLabels:
+      app: demopass
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demopass
+    spec:
+      containers:
+      - name: demopass
+        image: naseerce1/demopass
+        ports:
+          - containerPort: 8080
+
