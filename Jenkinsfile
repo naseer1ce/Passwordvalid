@@ -1,5 +1,9 @@
 node {
 
+	stage ('SCM checkout'){
+		git 'https://github.com/naseer1ce/Passwordvalid'
+}
+
 	stage ('Maven Build') {
           
                 sh 'mvn clean install'
