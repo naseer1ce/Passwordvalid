@@ -1,4 +1,10 @@
 node {
+
+	stage ('Maven Build') {
+          
+                sh 'mvn install'
+            
+            }
         stage('Build') {
 
                 sh 'docker build -t demopass:latest .'
