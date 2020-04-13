@@ -7,7 +7,7 @@ node {
         }
                 stage ('Push'){
                            withCredentials([string(credentialsId: 'Dockerpwd', variable: 'Dockerpwd')])
-                           sh "docker login -u naseerce1 -p ${Dockerpwd}"
+                           sh "docker login -u naseerce1 -p Naseerider@ca1i"
                            sh 'docker push naseerce1/demopass'
 
                 }
