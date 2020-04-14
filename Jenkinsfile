@@ -8,18 +8,18 @@ node {
                 sh 'mvn clean install'
             
             }
-        stage('Build') {
+        stage('Docker Build') {
 
                 sh 'docker build -t demopass:latest .'
                 sh 'docker tag demopass:latest naseerce1/demopass:latest'
 
         }
-                stage ('Push'){
+                stage ('DockerHub Push'){
                            sh "docker login -u naseerce1 -p Naseerider@ca1i"
                            sh 'docker push naseerce1/demopass'
 
                 }
-        stage('Run') {
+        stage('Deploy in K8s') {
 
                 sshagent(['deployinstance']) {
                 sh "scp -o StrictHostKeyChecking=no Deployment.yml services.yml ec2-user@172.31.24.213:/home/ec2-user/"
