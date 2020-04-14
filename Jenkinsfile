@@ -1,5 +1,4 @@
 node {
-//Stage -1
 	stage ('SCM checkout'){
 		git 'https://github.com/naseer1ce/Passwordvalid'
 }
