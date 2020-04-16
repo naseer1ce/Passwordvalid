@@ -3,3 +3,4 @@ COPY target/pwdvalid-spring-boot.jar .
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "pwdvalid-spring-boot.jar"]
 
+
