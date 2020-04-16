@@ -22,14 +22,14 @@ node {
         stage('Deploy in K8s') {
 
                 sshagent(['deployinstance']) {
-                sh "scp -o StrictHostKeyChecking=no Deployment.yml services.yml ec2-user@172.31.24.213:/home/ec2-user/"
+                sh "scp -o StrictHostKeyChecking=no Deployment.yml services.yml ec2-user@172.31.6.208:/home/ec2-user/"
             script{
 	            try{
-	                sh "ssh ec2-user@172.31.24.213 kubectl create -f ."
+	                sh "ssh ec2-user@172.31.6.208 kubectl create -f ."
 	            }catch(error){
-	                sh "ssh ec2-user@172.31.24.213 kubectl apply -f ."
+	                sh "ssh ec2-user@172.31.6.208 kubectl apply -f ."
             }
         }
     }
-}
+  }
 }
